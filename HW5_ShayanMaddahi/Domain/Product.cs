@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HW5_ShayanMaddahi.Domain
+﻿namespace HW5_ShayanMaddahi.Domain
 {
-    internal class Product
+    public class Product
     {
+        public Guid ProductId { get; set; }
+        public string Name { get; set; }
+        public string Barcode { get; set; }
     }
 }
