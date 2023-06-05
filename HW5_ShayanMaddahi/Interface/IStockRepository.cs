@@ -9,7 +9,6 @@ namespace HW5_ShayanMaddahi.Interface
 {
     public interface IStockRepository
     {
-      
-
+        
     }
 }
