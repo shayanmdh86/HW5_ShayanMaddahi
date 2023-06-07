@@ -4,12 +4,32 @@ namespace HW5_ShayanMaddahi.Interface
 {
     public class ProductRepository : IProductRepository
     {
+<<<<<<< Updated upstream
         public string AddProduct(Product product)
         {
             throw new NotImplementedException();
 
             CheckProductName(product.Name);
 
+=======
+        bool Test;
+        List<Product> products = new List<Product>();
+
+        public ProductRepository()
+        {
+
+
+        }
+
+        public string AddProduct(Product product)
+        {
+            try { CheckProductName(product.Name); }
+            catch (IncorrectNameFormatException ex) { Console.WriteLine($"Exception : {ex.Message}"); }  
+            if (Test)
+            {
+                products.Add(product);
+            }
+>>>>>>> Stashed changes
             return "done";
         }
 
@@ -24,6 +44,7 @@ namespace HW5_ShayanMaddahi.Interface
         }
 
 
+<<<<<<< Updated upstream
         public void CheckProductName(string name)
         {
             //Tel101_
@@ -35,6 +56,9 @@ namespace HW5_ShayanMaddahi.Interface
             }
 
 
+=======
+            return Test;
+>>>>>>> Stashed changes
         }
 
     }
