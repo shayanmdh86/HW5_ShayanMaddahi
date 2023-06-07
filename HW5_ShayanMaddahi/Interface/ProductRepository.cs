@@ -1,9 +1,4 @@
 ﻿using HW5_ShayanMaddahi.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HW5_ShayanMaddahi.Interface
 {
@@ -12,6 +7,10 @@ namespace HW5_ShayanMaddahi.Interface
         public string AddProduct(Product product)
         {
             throw new NotImplementedException();
+
+            CheckProductName(product.Name);
+
+            return "done";
         }
 
         public string GetProductById(int id)
@@ -23,5 +22,20 @@ namespace HW5_ShayanMaddahi.Interface
         {
             throw new NotImplementedException();
         }
+
+
+        public void CheckProductName(string name)
+        {
+            //Tel101_
+            Regex regex = new Regex(@"^[A-X][a-x]{2}[1-9]{3}_$");
+            bool TestName = regex.IsMatch(name);
+            if (!TestName)
+            {
+                Console.WriteLine("not correct!!");
+            }
+
+
+        }
+
     }
 }
