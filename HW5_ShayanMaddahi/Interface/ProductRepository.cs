@@ -1,4 +1,5 @@
 ﻿using HW5_ShayanMaddahi.Domain;
+using HW5_ShayanMaddahi.Interface.Exception;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,16 +14,8 @@ namespace HW5_ShayanMaddahi.Interface
         bool Test;
         public string AddProduct(Product product)
         {
-            CheckProductName(product.Name);
-            if (Test)
-            {
-                Console.WriteLine("ok");
-            }
-            else
-            {
-                Console.WriteLine("NOt ok");
-            }
-
+            try { CheckProductName(product.Name); }
+            catch (IncorrectNameFormatException ex) { Console.WriteLine($"Exception : {ex.Message}"); }  
             return "done";
         }
 
@@ -41,7 +34,7 @@ namespace HW5_ShayanMaddahi.Interface
             Regex regex = new Regex(@"^[A-Z][a-z]{3}[1-9]{1}[_]{1}[1-9]{2}$");
             Test =regex.IsMatch(name);
             if (!Test)
-                Console.WriteLine("product name is not correct");
+                throw new IncorrectNameFormatException();
 
             return Test;
 
